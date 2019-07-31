@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:context="http://www.springframework.org/schema/context"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+   <bean id="searchClientFactory"
+      class="chap1.sample1.SearchClientFactoryBean">
+      <property name="server" value="10.20.30.40" />
+      <property name="port" value="8888" />
+      <property name="contentType" value="json" />
+   </bean>
+   <!-- <import resource="classpath:/ch02/sample4/config-sensor.xml" /> <import 
+      resource="classpath:/ch02/sample3/config.xml" /> -->
+
+
+</beans>
+
+<!-- <context:annotation-config /> <bean class="ch02.sample4.ConfigSensor" 
+   /> <bean id="sensor1" class="ch02.sample4.Sensor"> <property name="additionalInfo"> 
+   <props> <prop key="threshold">1500</prop> <prop key="retry">3</prop> </props> 
+   </property> </bean> <bean id="sensor2" class="ch02.sample4.Sensor"> <property 
+   name="agentCodes"> <set> <value>200</value> <value>300</value> </set> </property> 
+   <property name="additionalInfo"> <value> threshold=3000 retry = 5 </value> 
+   </property> </bean> <bean id="monitor" class="ch02.sample4.Monitor"> <property 
+   name="sensorMap"> <map> <entry> <key> <value>frontDoor</value> </key> <ref 
+   bean="sensor1" /> </entry> <entry key="backDoor" value-ref="sensor2" /> </map> 
+   </property> <property name="config"> <map> <entry key="interval" value="1000" 
+   /> <entry key="period"> <value>2000</value> </entry> </map> </property> </bean> 
+   <bean id="messageBean" class="sample3.MessageBeanEn" /> <bean id="mvnBuildRunner" 
+   class="ch02.sample2.MavenBuildRunner"> <property name="mavenPath"> <value> 
+   c:\apache-maven-3.1.1</value> </property> </bean> <bean id="sampleProject" 
+   class="ch02.sample2.Project"> <property name="srcDirs"> <list> <value>src/</value> 
+   <value>srcResources/</value> </list> </property> <property name="binDir" 
+   value="bin/" /> <property name="buildRunner"> <ref bean="mvnBuildRunner" 
+   /> </property> </bean> <bean id="user1" class="ch02.sample3.User"> <constructor-arg 
+   value="bkchoi" /> <constructor-arg value="1234" /> </bean> <bean id="user2" 
+   class="ch02.sample3.User"> <constructor-arg value="madvirus" /> <constructor-arg 
+   value="qwer" /> </bean> <bean id="userRepository" class="ch02.sample3.UserRespository"> 
+   <property name="users"> <list> <ref bean="user1" /> <ref bean="user2" /> 
+   </list> </property> </bean> <bean id="pwChangeSvc" class="ch02.sample3.PasswordChangeService"> 
+   <constructor-arg> <ref bean="userRepository" /> </constructor-arg> </bean> 
+   <bean id="authFailLogger" class="ch02.sample3.AuthFailLogger"> <property 
+   name="threshold" value="2" /> </bean> <bean id="authenticationService" class="ch02.sample3.AuthenticationService"> 
+   <property name="failLogger" ref="authFailLogger" /> <property name="userRepository" 
+   ref="userRepository" /> </bean> </beans> -->
